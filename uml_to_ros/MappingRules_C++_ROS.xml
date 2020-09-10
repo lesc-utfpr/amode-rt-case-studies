@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Platforms>
+  <!--**********************************************************************-->
+  <!--*          Configuration for C++/ROS platform                        *-->
+  <!--**********************************************************************-->
+  <CPP_ROS>
+    <!-- Mapping rules for APPLICATION CODE -->
+    <Application>
+      <Software>
+        <!-- Source code generation options -->
+        <SourceOptions isAspectLanguage="no" ClassesPerFile="1" 
+                       hasClassesDeclaration="yes" Identation="5"
+                       BlockStart="{" BlockEnd="}">
+          <FileNameConvention>$Class.Name</FileNameConvention>
+          <Package></Package>
+          <SourceReference>#include ""</SourceReference>
+          <SourceOrganization>
+            <DeclarationFile FileExtension=".h">
+              $SourceCode.ClassesDeclaration
+            </DeclarationFile>
+            <ImplementationFile FileExtension=".cc">
+			$SourceCode.PackagesDeclaration
+			\n$SourceCode.ReferencesDeclaration
+			\n$SourceCode.ClassesImplementation
+            </ImplementationFile>
+          </SourceOrganization>
+        </SourceOptions>
+        
+        
+        <!-- Mapping rules for PRIMARY ELEMENTS -->
+        <PrimaryElementsMapping>
+          <DataTypes>
+            <Array>
+			  $CodeGenerator.getDataTypeStr($DataType.DataType)
+            </Array>
+            <Boolean>bool</Boolean>
+            <Byte>short int</Byte>
+            <Char>char</Char>
+            <Class>$DataType.Represent.Name*</Class>
+            <DateTime>DateTime</DateTime>
+            <Enumeration>
+              enum $DataType.Name 
+              $Options.BlockStart 
+              #foreach ($v in $DataType.Values)
+                #if ($velocityCount > 1) , #end
+                \n$v
+              #end
+              \n$Option.BlockEnd
+            </Enumeration>
+            <Integer>int</Integer>
+            <Long>long int</Long>
+            <Short>short int</Short>
+            <String>string</String>
+            <Void>void</Void>
+            <Double>double</Double>
+            <Float>float</Float>
+          </DataTypes>
+          <Visibilities>
+            <Private>private</Private>
+            <Protected>protected</Protected>
+            <Public>public</Public>
+          </Visibilities>
+          <ParameterKinds>
+            <In></In>
+            <Out></Out>
+            <InOut></InOut>
+          </ParameterKinds>
+        </PrimaryElementsMapping>
+        
+        
+        <!-- Mapping rules for CLASSES -->
+        <Classes>
+			<Declaration>
+### #set( $OBJECT_NAME = "${Class.Name}_${Object.Name}" )
+#set( $OBJECT_NAME = "${Class.Name}" )
+#set( $uh = '_h' )
+#set( $mydef = '#'+'define' )
+#set( $myinc = '#'+'include' )
+#ifndef $Class.Name$uh
+\n$mydef $Class.Name$uh
+\n
+\n
+\n$myinc &lt;iostream>
+\n$myinc &lt;stdlib.h>
+\n$myinc &lt;stddef.h>
+\n$myinc "ros/ros.h"
+\n
+\n
+\nclass $Class.Name 
+#if ($Class.SuperClass) 
+  : public $Class.SuperClass.Name 
+#end
+\n$Options.BlockStart
+\n$CodeGenerator.getAttributesDeclaration(1)
+\n
+\n#### ROS ####
+\n#if ( !${Class.isAbstract()} )
+\n	#foreach ($meth in $DERCSHelper.getAllMethodsFromClass($Class) )
+\n	  #if ( $meth.isPublic() &amp;&amp; $meth.isGetMethod() &amp;&amp; ${meth.AssociatedAttribute.DataType.isPrimitive()})
+\n		public: ros::Publisher pub_${meth.AssociatedAttribute.Name};
+\n    #end
+\n	  #if ( $meth.isPublic() &amp;&amp; $meth.isSetMethod() &amp;&amp; ${meth.AssociatedAttribute.DataType.isPrimitive()})
+\n		#set( $TOPIC_NAME = "${OBJECT_NAME}_${meth.AssociatedAttribute.Name}" ) 
+\n		public: ros::Subscriber sub_${meth.AssociatedAttribute.Name};
+\n		public: void topic_${meth.AssociatedAttribute.Name}_call_back(const uml_to_ros::${TOPIC_NAME}::ConstPtr&amp; msg);
+\n	  #end
+\n	#end
+\n#end
+\n#### ROS ####
+\n
+\n$CodeGenerator.getMessagesDeclaration(1)
+\n$Options.BlockEnd
+;
+\n#if ( !${Class.isAbstract()} )
+\n
+\n// instantiate singleton object
+## \nstatic $Class.Name obj_$Class.Name = new $Class.Name ();
+\nstatic $Class.Name obj_$Class.Name;
+\n
+\n#end
+\n
+\n#endif
+\n
+			</Declaration>
+          
+          <Implementation>
+### #set( $OBJECT_NAME = "${Class.Name}_${Object.Name}" )
+#set( $OBJECT_NAME = "${Class.Name}" )
+###set( $ph = '.h' )
+#set( $myinc = '#'+'include' )
+\n$myinc &quot;${Class.Name}.h&quot; 
+\n
+\n
+\n$CodeGenerator.getMessagesImplementation(1)
+\n
+\n#if ( !${Class.isAbstract()} )
+\n
+\n#### ROS #### -- code for call-back functions to get() methods
+\n#foreach ($meth in $DERCSHelper.getAllMethodsFromClass($Class) )
+\n  #if ( $meth.isPublic() &amp;&amp; $meth.isSetMethod() &amp;&amp; ${meth.AssociatedAttribute.DataType.isPrimitive()})
+\n	  #set( $TOPIC_NAME = "${OBJECT_NAME}_${meth.AssociatedAttribute.Name}" ) 
+\n	  void ${Class.Name}::topic_${meth.AssociatedAttribute.Name}_call_back(const uml_to_ros::${TOPIC_NAME}::ConstPtr &amp;msg) {
+\n	    ROS_INFO("NEW Value - ${meth.AssociatedAttribute.Name} = %d", msg->${meth.AssociatedAttribute.Name});
+### \n	    ${OBJECT_NAME}.${meth.AssociatedAttribute.Name} = msg->${meth.AssociatedAttribute.Name};
+\n	    ${meth.AssociatedAttribute.Name} = msg->${meth.AssociatedAttribute.Name};
+\n	  }
+\n  #end
+\n#end
+\n#### ROS ####
+\n
+\n#### ROS #### -- code for call-back functions to ROS services
+\n#foreach ($meth in $DERCSHelper.getAllMethodsFromClass($Class) )
+\n  #if ( $meth.isPublic() 
+\n          &amp;&amp; !$meth.isGetSetMethod() 
+\n          &amp;&amp; !$meth.isMainBehavior() 
+\n          &amp;&amp; !$DERCSHelper.isConstructor($meth)
+\n		    &amp;&amp; !$DERCSHelper.isDestructor($meth)   )
+\n	#set( $SRV_NAME = "${OBJECT_NAME}_${meth.Name}" ) 
+\n	bool ${Class.Name}::srv_${SRV_NAME}(  uml_to_ros::${SRV_NAME}::Request  &amp;req, uml_to_ros::${SRV_NAME}::Response &amp;res  ) {
+\n	  ROS_INFO("Service call: $Class.Name.${meth.Name}()" );
+\n
+\n	  ### TODO include arguments here
+\n	  ${meth.Name}();
+\n
+\n	  return true;
+\n	}
+\n  #end
+\n#end
+\n#### ROS ####
+\n
+\n
+\n#### ROS #### -- generating the main function
+\nint main(int argc, char **argv) {
+\n  ros::init(argc, argv, "${OBJECT_NAME}");
+\n  ros::NodeHandle rn_${OBJECT_NAME};
+\n  
+\n#### ROS #### --- code for published/subscribed topics
+\n  // Published/subscribed topics
+\n	#foreach ($meth in $DERCSHelper.getAllMethodsFromClass($Class) )
+\n	  #if ( $meth.isPublic() &amp;&amp; $meth.isGetSetMethod() &amp;&amp; ${meth.AssociatedAttribute.DataType.isPrimitive()})
+\n		#set( $TOPIC_NAME = "${OBJECT_NAME}_${meth.AssociatedAttribute.Name}" ) 
+\n		/* Message format. Copy/paste the next lines into a file named ${TOPIC_NAME}.msg
+\n		   $CodeGenerator.getDataTypeStr(${meth.AssociatedAttribute.DataType}) ${meth.AssociatedAttribute.Name}
+\n		   ## TODO include the generation of complex datatype e.g. classes
+\n		 */
+\n    #end
+\n	  #if ( $meth.isPublic() &amp;&amp; $meth.isGetMethod() &amp;&amp; ${meth.AssociatedAttribute.DataType.isPrimitive()} )
+\n		obj_${Class.Name}.pub_${meth.AssociatedAttribute.Name} = rn_${OBJECT_NAME}.advertise&lt;uml_to_ros::${TOPIC_NAME}&gt;("${TOPIC_NAME}", 1000);
+\n	  #end
+\n	  #if ( $meth.isPublic() &amp;&amp; $meth.isSetMethod() &amp;&amp; ${meth.AssociatedAttribute.DataType.isPrimitive()} )
+\n		obj_${Class.Name}.sub_${meth.AssociatedAttribute.Name} = rn_${OBJECT_NAME}.subscribe("${TOPIC_NAME}", 1000, &amp;${Class.Name}::topic_${meth.AssociatedAttribute.Name}_call_back, &amp;obj_${Class.Name});
+\n	  #end
+\n	#end
+\n#### ROS ####
+\n
+\n#### ROS #### --- code for the provided services
+\n  // Provided services
+\n	#foreach ($meth in $DERCSHelper.getAllMethodsFromClass($Class) )
+\n	  #if ( $meth.isPublic() 
+\n          &amp;&amp; !$meth.isGetSetMethod() 
+\n          &amp;&amp; !$meth.isMainBehavior() 
+\n          &amp;&amp; !$DERCSHelper.isConstructor($meth)
+\n		    &amp;&amp; !$DERCSHelper.isDestructor($meth)   )
+\n	    #set( $SRV_NAME = "${OBJECT_NAME}_${meth.Name}") 
+\n	    /* Service Input/Output parameters. Copy/paste these lines in a *.srv file.
+\n		   ---
+\n		   # request input data
+\n		   #foreach( $param in $meth.Parameters )
+\n			 #if ( $param.isInput() )
+\n			   $CodeGenerator.getDataTypeStr($param.DataType) $param.Name
+\n			 #end
+\n		   #end
+\n		   ---
+\n		   # response data
+\n		   #foreach( $param in $meth.Parameters )
+\n			 #if ( $param.isOutput() )
+\n			   $CodeGenerator.getDataTypeStr($param.DataType) $param.Name
+\n			 #end
+\n		   #end
+\n	   */
+\n	  ros::ServiceServer srv_$SRV_NAME = rn_${OBJECT_NAME}.advertiseService("${SRV_NAME}", &amp;${Class.Name}::${meth.name}, &amp;obj_${Class.Name});
+\n	  #end
+\n	#end
+\n#### ROS ####
+\n
+\n#*
+\n#### This code is commented because every service request creates its own client
+\n#### ROS #### --- code for the requested services
+\n  // Requested Services
+\n	#foreach ($meth in $Class.getMethods())
+\n	  #if ( $meth.isPublic() &amp;&amp; !$meth.isGetSetMethod())
+\n		#foreach ($element in $meth.TriggeredBehavior.BeharioralElements)
+\n		  #if ($element.isSendMessageAction 
+\n			   &amp;&amp; $element.ToObject.InstanceOf != $Class )
+\n			 #set( $SRV_NAME = ${element.ToObject.InstanceOf.Name}+"_"+
+\n							  ${element.ToObject.Name}+"_"+
+\n							  ${element.RelatedMethod.Name} ) 
+\n			  
+\n			 ros::ServiceClient "${SRV_NAME}_client" = ${OBJECT_NAME}
+\n					.serviceClient&lt;uml-to-ros::${SRV_NAME}&gt;("$SRV_NAME");
+\n		  #end
+\n		#end
+\n	  #end
+\n	#end
+\n#### ROS ####
+\n*#
+\n
+\n#if ($Class.isActiveClass())
+\n	obj_${Class.Name}.${DERCSHelper.getMainBehaviorFromActiveClass($Class).Name}();
+\n#else
+\n  ros::spin();
+\n#end
+\n
+\n  return 0;
+\n}
+\n#### ROS ####
+\n#end
+		  </Implementation>
+          
+          <Attributes>
+            #if ( ${Attribute.DataType.isPrimitive()} )
+	            $VisibilityStr : 
+    	        #if ($Attribute.isStatic())
+        	      static
+            	#end
+	            $DataTypeStr $Attribute.Name;
+            #end
+          </Attributes>
+          
+          <Messages>
+            <Declaration>
+            #if (  (${Message.isGetSetMethod()} == false)
+                || (${Message.isGetSetMethod()} &amp;&amp; ${Message.AssociatedAttribute.DataType.isPrimitive()}) )
+	            $VisibilityStr : 
+				#if($Message.getOwnerClass().isAbstract() 
+				    &amp;&amp; !$DERCSHelper.isConstructor($Message)
+				    &amp;&amp; !$DERCSHelper.isDestructor($Message) )
+					virtual 
+				#end
+				#if ( $DERCSHelper.isDestructor($Message) )
+				    ~
+            	#elseif ( !$DERCSHelper.isConstructor($Message) )
+					$ReturnTypeStr                
+				#end
+    	        ${Message.Name}(
+        	      #if ($Message.ParametersCount > 0)
+            	    #foreach( $param in $Message.Parameters )
+                	  #if ($velocityCount > 1), #end
+	                  $CodeGenerator.getDataTypeStr($param.DataType) $param.Name
+    	            #end
+        	      #end
+				);
+			#end
+			</Declaration>
+            <Implementation>
+            #if (  (${Message.isGetSetMethod()} == false)
+                || (${Message.isGetSetMethod()} &amp;&amp; ${Message.AssociatedAttribute.DataType.isPrimitive()}) )
+
+			  #if ( !$DERCSHelper.isDestructor($Message) &amp;&amp; !$DERCSHelper.isConstructor($Message))
+			    $ReturnTypeStr                
+			  #end			
+			  ${Class.Name}::
+			  #if ( $DERCSHelper.isDestructor($Message) )
+			    ~
+			  #end
+              ${Message.Name}(
+              #if ($Message.ParametersCount > 0)
+                #foreach( $param in $Message.Parameters )
+                  #if ($velocityCount > 1), #end
+                  $CodeGenerator.getDataTypeStr($param.DataType) $param.Name
+                #end
+              #end
+              ) $Options.BlockStart
+                 \n// Variables
+                 \n$CodeGenerator.getVariablesDeclaration(1)
+                 \n// Actions
+                 \n$CodeGenerator.getActionsCode(1)
+              \n$Options.BlockEnd
+            #end
+            </Implementation>
+          </Messages>
+        </Classes>
+        
+        
+        <!-- Mapping rules for BEHAVIOR, i.e. sequence of actions -->
+        <Behavior>
+          <VariableDeclaration>
+            $DataTypeStr $Variable.Name;
+          </VariableDeclaration>
+          
+          <Branch>
+            if ( $Branch.EnterCondition ) $Options.BlockStart 
+              #set( $ident = $IdentationLevel + 0) 
+              \n$CodeGenerator.getVariablesDeclaration($ident) 
+              \n$CodeGenerator.getActionsCode($ident) 
+            \n$Options.BlockEnd 
+            #if ( $Branch.hasAlternativeBehavior() ) 
+              \n else $Options.BlockStart 
+                \n$CodeGenerator.getVariablesDeclaration($Branch.AlternativeBehavior, $ident) 
+                \n$CodeGenerator.getActionsCode($Branch.AlternativeBehavior, $ident) 
+              \n$Options.BlockEnd 
+            #end
+          </Branch>
+          
+          <Loop>
+            #if ($Loop.NumberOfRepetitions > 0) 
+               for(int $IndexVariableName = 0; $IndexVariableName &lt; $Loop.NumberOfRepetitions; $IndexVariableName++) 
+            #elseif ($Loop.ExitCondition) 
+              #if ($Loop.EnterCondition)
+                 ${Loop.EnterCondition}; 
+              #end  
+              \nwhile ($Loop.ExitCondition) 
+            #end 
+            $Options.BlockStart 
+               \n$CodeGenerator.getVariablesDeclaration(1) 
+               \n$CodeGenerator.getActionsCode(1) 
+            \n$Options.BlockEnd
+          </Loop>
+          
+          <Assignment>
+            #set( $LEFT_SIDE = "none" )
+            #if ($Action.isVariableAssignment())
+              #set( $LEFT_SIDE = "${Action.Variable.Name}" ) 
+            #else
+              #if ($Action.Object)
+                 #set( $LEFT_SIDE = "${Action.Object.Name}.${Action.Attribute.Name}" )
+              #else
+                 #set( $LEFT_SIDE = "${Action.Attribute.Name}" )
+              #end
+            #end
+            ${LEFT_SIDE}
+            = 
+            #if ($Action.isAssignmentOfValue())
+              $Action.Value; 
+            #else
+              $CodeGenerator.getActionCode($Action.Action)
+            #end
+            ;
+            ## ROS - if this is the assinment of a new value of an attribute, publish this value
+            #if (!${Action.isVariableAssignment()}  &amp;&amp; ${Action.Attribute.isPrimitive()} )
+              \n// publish the new value of the ${Action.Attribute.Name} attribute
+              \numl_to_ros::${Action.Attribute.OwnerClass.Name}_${Action.Attribute.Name} msg;
+              \nmsg.${Action.Attribute.Name} = ${LEFT_SIDE};
+              \npub_${Action.Attribute.Name}.publish(msg);
+            #end
+          </Assignment>
+          
+          <Object>
+            <Creation>
+              #set( $x = 'nada' )
+              new ${Action.Object.InstanceOf.Name}(
+              #if ($Action.ParametersValuesCount > 0)
+                #foreach( $x in $Action.ParametersValues )
+                  #if ($velocityCount > 1), #end
+                  $x
+                #end
+              #end
+              );
+            </Creation>
+            
+            <Destruction></Destruction>
+          </Object>
+          
+          <Expression>$Action.Expression</Expression>
+          
+          <Return>
+            return 
+            #if ($Action.isAssignmentOfValue()) 
+              ${Action.Value} 
+            #elseif ($Action.isAttributeAssignment()) 
+              ${Action.Attribute.Name} 
+            #else 
+              $CodeGenerator.getActionCode($Action.Action) 
+            #end
+            ;
+          </Return>
+          
+          <StateChange></StateChange>
+          
+          <SendMessage>
+            <ToLocal>
+              <Software>
+                #if ($Action.getToObject() != $Action.getFromObject())
+                  ${Action.ToObject.Name}->
+                #end
+                ${Action.RelatedMethod.Name}(
+                #if ($Action.ParametersValuesCount > 0)
+                  #foreach($param in $Action.getParametersValues())
+                    #if ($velocityCount > 1), #end
+                    #set( $x =  $velocityCount - 1)
+                    #if ($Action.isParameterValue($x))
+                      ${param}
+                    #else
+                      ${param.Name}
+                    #end
+                  #end
+                #end
+                );
+              </Software>
+              <Hardware></Hardware>
+            </ToLocal>
+            
+            <ToRemote>
+              <Software>
+                #set( $SRV_NAME = "${Action.ToObject.ClassName}_${Action.ToObject.Name}_${Action.RelatedMethod.Name}")
+				uml_to_ros::${SRV_NAME} srv_${SRV_NAME};
+				#if ($Action.ParametersValuesCount > 0)
+				  #foreach($param in $Action.getParametersValues())
+					#set( $x =  $velocityCount - 1)
+					#if ( $param.isInput() )
+					  #set( $REQ = "request")
+					#else
+					  #set( $REQ = "response")
+					#end
+					#if ($Action.isParameterValue($x))
+					  #set( $REQ = "$REQ.${Action.RelatedMethod.getParameter($x).Name} = ${param}")
+					#else
+					  #set( $REQ = "$REQ.${Action.RelatedMethod.getParameter($x).Name} = ${param.Name}")
+					#end
+					${SRV_NAME}.$REQ
+				  #end
+				  if ( ros::service::call("${SRV_NAME}", srv_${SRV_NAME}) ) 
+					ROS_INFO("Service call to srv_${SRV_NAME} successfull!");
+				  else
+					ROS_ERROR("Failed to call srv_${SRV_NAME}.");
+				#end
+              </Software>
+              <Hardware></Hardware>
+            </ToRemote>
+          </SendMessage>
+        </Behavior>
+        
+        
+        <!-- Mapping rules for INTERRUPT HANDLING code -->
+        <InterruptHandling>
+        </InterruptHandling>
+        
+        <!-- Mapping rules for DERAF ASPECTS -->
+        <Aspects>
+          <PeriodicTiming>
+            <Declaration></Declaration>
+            <Adaptations>
+              <Structural Name="Period" Order="1" ModelLevel="no">
+                // PeriodicTiming.Period
+              </Structural>
+              <Structural Name="ModifyConstructor" Order="1" ModelLevel="yes">
+                // PeriodicTiming.ModifyConstructor
+              </Structural>
+              <Behavioral Name="SetupPeriod" Order="2" ModelLevel="no">
+                // PeriodicTiming.SetupPeriod
+              </Behavioral>
+              <Behavioral Name="FrequencyControl" Order="3" ModelLevel="no">
+                \nros::spinOnce();
+                \nloop_rate.sleep();
+              </Behavioral>
+              <Behavioral Name="LoopMechanism" Order="4" ModelLevel="no">
+                \nROS_INFO("Init");
+                \nros::Rate loop_rate( $DERCSHelper.toHertz( ${Crosscutting.getValueOf("Period")} ) ); // Period: ${Crosscutting.getValueOf("Period")}
+                \nwhile (ros::ok()) $Options.BlockStart
+                  \n$CodeGenerator.getGeneratedCodeFragment(1)
+                \n$Options.BlockEnd
+                \nROS_INFO("RobotArmJoint - finish");
+              </Behavioral>
+              <Behavioral Name="AdaptObjectConstruction" Order="1" ModelLevel="yes">
+                // PeriodicTiming.AdaptObjectconstruction
+              </Behavioral>
+            </Adaptations>
+          </PeriodicTiming>
+          
+          <TimingAttributes>
+            <Declaration></Declaration>
+            <Adaptations>
+              <Structural Name="Deadline" Order="3" ModelLevel="no">
+              </Structural>
+              <Structural Name="Priority" Order="3">
+              </Structural>
+              <Structural Name="WCET" Order="3" ModelLevel="no">
+              </Structural>
+              <Structural Name="ModityClassStructure" Order="0" ModelLevel="yes">
+              </Structural>
+              <Structural Name="ModifyConstructor" Order="0" ModelLevel="yes">
+              </Structural>
+              <Behavioral Name="SetupTimingAttributes" Order="2" ModelLevel="no">
+              </Behavioral>
+              <Behavioral Name="AdaptObjectConstruction" Order="0" ModelLevel="yes">
+              </Behavioral>
+            </Adaptations>
+          </TimingAttributes>
+          
+          <DataFreshness>
+            <Declaration></Declaration>
+            <Adaptations>
+              <Structural Name="ValidityInformation" Order="0" ModelLevel="no">
+              </Structural>
+              <Structural Name="SetupValidity" Order="0" ModelLevel="no">
+              </Structural>
+              <Behavioral Name="VerifyFreshness" Order="0" ModelLevel="no">
+              </Behavioral>
+              <Behavioral Name="UpdateFreshness" Order="0" ModelLevel="no">
+              </Behavioral>
+            </Adaptations>
+          </DataFreshness>
+          
+          <SchedulingSupport>
+            <Declaration></Declaration>
+            <Adaptations>
+              <Structural Name="Scheduler" Order="0" ModelLevel="no">
+              </Structural>
+              <Behavioral Name="SetupConcurrentActivities" Order="0" ModelLevel="no">
+              </Behavioral>
+            </Adaptations>
+          </SchedulingSupport>
+          
+          <ConcurrentAccessControl>
+            <Declaration></Declaration>
+            <Adaptations>
+              <Structural Name="ConcurrencyControlMechanism" Order="0" ModelLevel="no"></Structural>
+              <Behavioral Name="AquireAccess" Order="0" ModelLevel="no"></Behavioral>
+              <Behavioral Name="ReleaseAccess" Order="0" ModelLevel="no"></Behavioral>
+            </Adaptations>
+          </ConcurrentAccessControl>
+	</Aspects>
+      </Software>
+      
+      <Hardware></Hardware>
+	</Application>
+    
+    
+    <!-- Mapping rules for PLATFORM CODE -->
+    <PlatformConfiguration>
+      <Software>
+        <SourceOptions OutputDirectory="platform"></SourceOptions>
+        <Files xmlns:xi="http://www.w3.org/2001/XInclude">
+<!-- 
+          <xi:include href=".\platform_RT-FemtoJava\Scheduler.xml"/>
+          <xi:include href=".\platform_RT-FemtoJava\AbsoluteTime.xml"/>
+          <xi:include href=".\platform_RT-FemtoJava\HighResolutionTime.xml"/>
+          <xi:include href=".\platform_RT-FemtoJava\RelativeTime.xml"/>
+		  <xi:include href=".\platform_RT-FemtoJava\_SCLConfig.xml"/>
+ -->
+        </Files>
+      </Software>
+      <Hardware>
+	  </Hardware>   
+	</PlatformConfiguration>
+  </CPP_ROS>
+</Platforms>

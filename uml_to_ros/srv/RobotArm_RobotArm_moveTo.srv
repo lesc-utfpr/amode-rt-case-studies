@@ -1,0 +1,6 @@
+int32 ArmPosition
+int32 ShoulderPosition
+int32 RotaryShoulderPosition
+int32 WristPosition
+---
+int8 ret

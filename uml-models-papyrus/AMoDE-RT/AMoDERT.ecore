@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="AMoDERT" nsURI="https://utfpr.edu.br/uml/profile/AMoDE-RT" nsPrefix="AMoDERT">
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="AMoDE-RT"/>
+  </eAnnotations>
+  <eSubpackages name="AspectsModeling" nsURI="http:///AMoDERT/AspectsModeling.ecore"
+      nsPrefix="AMoDERT.AspectsModeling">
+    <eClassifiers xsi:type="ecore:EClass" name="Aspect">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BehavioralAdaptation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Crosscut">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Association" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Usage" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Usage"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Period" ordered="false"
+          eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Deadline" ordered="false"
+          eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Priority" ordered="false"
+          eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="WCET" ordered="false"
+          eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="TimeStamp" ordered="false"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Execution">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Message" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Message"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="JoinPoint">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Message" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Message"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Artifact" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Artifact"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Lifeline" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Lifeline"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" ordered="false"
+          eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Behavior" ordered="false"
+          lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Node" ordered="false"
+          lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Object" ordered="false"
+          lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Class" ordered="false"
+          lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="MessageDefinition" ordered="false"
+          lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+          defaultValueLiteral="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="JPDD">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Pointcut">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructuralAdaptation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="Utils" nsURI="http:///AMoDERT/Utils.ecore" nsPrefix="AMoDERT.Utils">
+    <eClassifiers xsi:type="ecore:EClass" name="Getter">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="forAttribute" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Setter">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="forAttribute" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

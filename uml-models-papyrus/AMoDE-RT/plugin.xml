@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated AMoDE-RT -->
+      <package
+            uri="http:///AMoDERT/AspectsModeling.ecore"
+            class="AMoDERT.AspectsModeling.AspectsModelingPackage"
+            genModel="AMoDE-RT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated AMoDE-RT -->
+      <package
+            uri="http:///AMoDERT/Utils.ecore"
+            class="AMoDERT.Utils.UtilsPackage"
+            genModel="AMoDE-RT.genmodel"/>
+   </extension>
+
+</plugin>

@@ -80,6 +80,8 @@
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="AMoDERT.ecore#//AspectsModeling/JPDD">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference AMoDERT.ecore#//AspectsModeling/JPDD/base_Package"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference AMoDERT.ecore#//AspectsModeling/JPDD/base_Interaction"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="AMoDERT.ecore#//AspectsModeling/Pointcut">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

@@ -205,7 +205,7 @@ public interface JoinPoint extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getJoinPoint_Name()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getName();

@@ -429,6 +429,15 @@ public class AspectsModelingPackageImpl extends EPackageImpl implements AspectsM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getJPDD_Base_Interaction() {
+		return (EReference)jpddEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPointcut() {
 		return pointcutEClass;
 	}
@@ -531,6 +540,7 @@ public class AspectsModelingPackageImpl extends EPackageImpl implements AspectsM
 
 		jpddEClass = createEClass(JPDD);
 		createEReference(jpddEClass, JPDD__BASE_PACKAGE);
+		createEReference(jpddEClass, JPDD__BASE_INTERACTION);
 
 		pointcutEClass = createEClass(POINTCUT);
 		createEReference(pointcutEClass, POINTCUT__BASE_OPERATION);
@@ -583,10 +593,10 @@ public class AspectsModelingPackageImpl extends EPackageImpl implements AspectsM
 		initEClass(crosscutEClass, Crosscut.class, "Crosscut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCrosscut_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCrosscut_Base_Usage(), theUMLPackage.getUsage(), null, "base_Usage", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCrosscut_Period(), theTypesPackage.getString(), "Period", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCrosscut_Deadline(), theTypesPackage.getString(), "Deadline", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCrosscut_Priority(), theTypesPackage.getString(), "Priority", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCrosscut_WCET(), theTypesPackage.getString(), "WCET", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCrosscut_Period(), ecorePackage.getEString(), "Period", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCrosscut_Deadline(), ecorePackage.getEString(), "Deadline", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCrosscut_Priority(), ecorePackage.getEString(), "Priority", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCrosscut_WCET(), ecorePackage.getEString(), "WCET", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCrosscut_TimeStamp(), ecorePackage.getEString(), "TimeStamp", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(executionEClass, Execution.class, "Execution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -599,7 +609,7 @@ public class AspectsModelingPackageImpl extends EPackageImpl implements AspectsM
 		initEReference(getJoinPoint_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 0, 1, JoinPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getJoinPoint_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 0, 1, JoinPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getJoinPoint_Base_Lifeline(), theUMLPackage.getLifeline(), null, "base_Lifeline", null, 0, 1, JoinPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getJoinPoint_Name(), theTypesPackage.getString(), "Name", null, 0, 1, JoinPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getJoinPoint_Name(), ecorePackage.getEString(), "Name", null, 0, 1, JoinPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJoinPoint_Behavior(), theTypesPackage.getBoolean(), "Behavior", "false", 1, 1, JoinPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJoinPoint_Node(), theTypesPackage.getBoolean(), "Node", "false", 1, 1, JoinPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getJoinPoint_Object(), theTypesPackage.getBoolean(), "Object", "false", 1, 1, JoinPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -608,6 +618,7 @@ public class AspectsModelingPackageImpl extends EPackageImpl implements AspectsM
 
 		initEClass(jpddEClass, AMoDERT.AspectsModeling.JPDD.class, "JPDD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJPDD_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 0, 1, AMoDERT.AspectsModeling.JPDD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getJPDD_Base_Interaction(), theUMLPackage.getInteraction(), null, "base_Interaction", null, 0, 1, AMoDERT.AspectsModeling.JPDD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(pointcutEClass, Pointcut.class, "Pointcut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPointcut_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 0, 1, Pointcut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

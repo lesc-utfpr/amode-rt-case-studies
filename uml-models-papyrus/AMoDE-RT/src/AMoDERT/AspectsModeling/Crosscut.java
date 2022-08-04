@@ -93,7 +93,7 @@ public interface Crosscut extends EObject {
 	 * @return the value of the '<em>Period</em>' attribute.
 	 * @see #setPeriod(String)
 	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut_Period()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getPeriod();
@@ -119,7 +119,7 @@ public interface Crosscut extends EObject {
 	 * @return the value of the '<em>Deadline</em>' attribute.
 	 * @see #setDeadline(String)
 	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut_Deadline()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getDeadline();
@@ -145,7 +145,7 @@ public interface Crosscut extends EObject {
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(String)
 	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut_Priority()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getPriority();
@@ -171,7 +171,7 @@ public interface Crosscut extends EObject {
 	 * @return the value of the '<em>WCET</em>' attribute.
 	 * @see #setWCET(String)
 	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut_WCET()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getWCET();

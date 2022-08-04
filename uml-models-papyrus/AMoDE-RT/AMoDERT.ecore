@@ -20,13 +20,13 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Usage" ordered="false"
           eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Usage"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="Period" ordered="false"
-          eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="Deadline" ordered="false"
-          eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="Priority" ordered="false"
-          eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="WCET" ordered="false"
-          eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="TimeStamp" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
@@ -48,7 +48,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Lifeline" ordered="false"
           eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Lifeline"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" ordered="false"
-          eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="Behavior" ordered="false"
           lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
           defaultValueLiteral="false"/>
@@ -68,6 +68,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="JPDD">
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
           eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Interaction" ordered="false"
+          eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Interaction"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Pointcut">
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"

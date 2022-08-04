@@ -414,13 +414,22 @@ public interface AspectsModelingPackage extends EPackage {
 	int JPDD__BASE_PACKAGE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Base Interaction</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JPDD__BASE_INTERACTION = 1;
+
+	/**
 	 * The number of structural features of the '<em>JPDD</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JPDD_FEATURE_COUNT = 1;
+	int JPDD_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>JPDD</em>' class.
@@ -829,6 +838,17 @@ public interface AspectsModelingPackage extends EPackage {
 	EReference getJPDD_Base_Package();
 
 	/**
+	 * Returns the meta object for the reference '{@link AMoDERT.AspectsModeling.JPDD#getBase_Interaction <em>Base Interaction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Interaction</em>'.
+	 * @see AMoDERT.AspectsModeling.JPDD#getBase_Interaction()
+	 * @see #getJPDD()
+	 * @generated
+	 */
+	EReference getJPDD_Base_Interaction();
+
+	/**
 	 * Returns the meta object for class '{@link AMoDERT.AspectsModeling.Pointcut <em>Pointcut</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1147,6 +1167,14 @@ public interface AspectsModelingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference JPDD__BASE_PACKAGE = eINSTANCE.getJPDD_Base_Package();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Interaction</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JPDD__BASE_INTERACTION = eINSTANCE.getJPDD_Base_Interaction();
 
 		/**
 		 * The meta object literal for the '{@link AMoDERT.AspectsModeling.impl.PointcutImpl <em>Pointcut</em>}' class.

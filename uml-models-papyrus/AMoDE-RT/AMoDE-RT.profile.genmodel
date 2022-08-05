@@ -47,11 +47,7 @@
             propertySortChoices="true" ecoreFeature="ecore:EReference AMoDERT.ecore#//AspectsModeling/Crosscut/base_Association"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference AMoDERT.ecore#//AspectsModeling/Crosscut/base_Usage"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute AMoDERT.ecore#//AspectsModeling/Crosscut/Period"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute AMoDERT.ecore#//AspectsModeling/Crosscut/Deadline"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute AMoDERT.ecore#//AspectsModeling/Crosscut/Priority"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute AMoDERT.ecore#//AspectsModeling/Crosscut/WCET"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute AMoDERT.ecore#//AspectsModeling/Crosscut/TimeStamp"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute AMoDERT.ecore#//AspectsModeling/Crosscut/Attributes"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="AMoDERT.ecore#//AspectsModeling/Execution">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

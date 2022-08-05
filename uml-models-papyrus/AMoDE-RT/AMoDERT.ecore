@@ -19,16 +19,8 @@
           eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Association"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Usage" ordered="false"
           eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Usage"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Period" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Deadline" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Priority" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="WCET" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="TimeStamp" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Attributes" ordered="false"
+          upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Execution">
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Message" ordered="false"

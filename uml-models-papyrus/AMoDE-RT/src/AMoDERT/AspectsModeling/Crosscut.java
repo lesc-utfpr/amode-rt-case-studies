@@ -2,6 +2,7 @@
  */
 package AMoDERT.AspectsModeling;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.uml2.uml.Association;
@@ -18,11 +19,7 @@ import org.eclipse.uml2.uml.Usage;
  * <ul>
  *   <li>{@link AMoDERT.AspectsModeling.Crosscut#getBase_Association <em>Base Association</em>}</li>
  *   <li>{@link AMoDERT.AspectsModeling.Crosscut#getBase_Usage <em>Base Usage</em>}</li>
- *   <li>{@link AMoDERT.AspectsModeling.Crosscut#getPeriod <em>Period</em>}</li>
- *   <li>{@link AMoDERT.AspectsModeling.Crosscut#getDeadline <em>Deadline</em>}</li>
- *   <li>{@link AMoDERT.AspectsModeling.Crosscut#getPriority <em>Priority</em>}</li>
- *   <li>{@link AMoDERT.AspectsModeling.Crosscut#getWCET <em>WCET</em>}</li>
- *   <li>{@link AMoDERT.AspectsModeling.Crosscut#getTimeStamp <em>Time Stamp</em>}</li>
+ *   <li>{@link AMoDERT.AspectsModeling.Crosscut#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut()
@@ -83,133 +80,19 @@ public interface Crosscut extends EObject {
 	void setBase_Usage(Usage value);
 
 	/**
-	 * Returns the value of the '<em><b>Period</b></em>' attribute.
+	 * Returns the value of the '<em><b>Attributes</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Period</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Attributes</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Period</em>' attribute.
-	 * @see #setPeriod(String)
-	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut_Period()
+	 * @return the value of the '<em>Attributes</em>' attribute list.
+	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut_Attributes()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	String getPeriod();
-
-	/**
-	 * Sets the value of the '{@link AMoDERT.AspectsModeling.Crosscut#getPeriod <em>Period</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Period</em>' attribute.
-	 * @see #getPeriod()
-	 * @generated
-	 */
-	void setPeriod(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Deadline</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Deadline</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deadline</em>' attribute.
-	 * @see #setDeadline(String)
-	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut_Deadline()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getDeadline();
-
-	/**
-	 * Sets the value of the '{@link AMoDERT.AspectsModeling.Crosscut#getDeadline <em>Deadline</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Deadline</em>' attribute.
-	 * @see #getDeadline()
-	 * @generated
-	 */
-	void setDeadline(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Priority</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Priority</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Priority</em>' attribute.
-	 * @see #setPriority(String)
-	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut_Priority()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getPriority();
-
-	/**
-	 * Sets the value of the '{@link AMoDERT.AspectsModeling.Crosscut#getPriority <em>Priority</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Priority</em>' attribute.
-	 * @see #getPriority()
-	 * @generated
-	 */
-	void setPriority(String value);
-
-	/**
-	 * Returns the value of the '<em><b>WCET</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>WCET</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>WCET</em>' attribute.
-	 * @see #setWCET(String)
-	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut_WCET()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getWCET();
-
-	/**
-	 * Sets the value of the '{@link AMoDERT.AspectsModeling.Crosscut#getWCET <em>WCET</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>WCET</em>' attribute.
-	 * @see #getWCET()
-	 * @generated
-	 */
-	void setWCET(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Time Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Time Stamp</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time Stamp</em>' attribute.
-	 * @see #setTimeStamp(String)
-	 * @see AMoDERT.AspectsModeling.AspectsModelingPackage#getCrosscut_TimeStamp()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getTimeStamp();
-
-	/**
-	 * Sets the value of the '{@link AMoDERT.AspectsModeling.Crosscut#getTimeStamp <em>Time Stamp</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time Stamp</em>' attribute.
-	 * @see #getTimeStamp()
-	 * @generated
-	 */
-	void setTimeStamp(String value);
+	EList<String> getAttributes();
 
 } // Crosscut

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AMoDERT.AspectsModeling="http:///AMoDERT/AspectsModeling.ecore" xmlns:AMoDERT.Utils="http:///AMoDERT/Utils.ecore" xmlns:GRM="http://www.eclipse.org/papyrus/GRM/1" xmlns:Time="http://www.eclipse.org/papyrus/Time/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///AMoDERT/AspectsModeling.ecore ../AMoDE-RT/AMoDE-RT.profile.uml#_1-yVYxPoEe2DgdmO0TrBQw http:///AMoDERT/Utils.ecore ../AMoDE-RT/AMoDE-RT.profile.uml#_1-yVqxPoEe2DgdmO0TrBQw http://www.eclipse.org/papyrus/GRM/1 http://www.eclipse.org/papyrus/MARTE/1#//MARTE_Foundations/GRM http://www.eclipse.org/papyrus/Time/1 http://www.eclipse.org/papyrus/MARTE/1#//MARTE_Foundations/Time">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AMoDERT.AspectsModeling="http:///AMoDERT/AspectsModeling.ecore" xmlns:AMoDERT.Utils="http:///AMoDERT/Utils.ecore" xmlns:GRM="http://www.eclipse.org/papyrus/GRM/1" xmlns:Time="http://www.eclipse.org/papyrus/Time/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///AMoDERT/AspectsModeling.ecore ../AMoDE-RT/AMoDE-RT.profile.uml#_p4S4ExTBEe2-99wv5HbKpQ http:///AMoDERT/Utils.ecore ../AMoDE-RT/AMoDE-RT.profile.uml#_p4S4UxTBEe2-99wv5HbKpQ http://www.eclipse.org/papyrus/GRM/1 http://www.eclipse.org/papyrus/MARTE/1#//MARTE_Foundations/GRM http://www.eclipse.org/papyrus/Time/1 http://www.eclipse.org/papyrus/MARTE/1#//MARTE_Foundations/Time">
   <uml:Model xmi:id="_546MIOf3Eey1bKVmm5z5Iw" name="Wheelchair">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_582Q8Of3Eey1bKVmm5z5Iw">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -717,19 +717,19 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_Os8KEBDcEe2TWOXscLXHQA" name="DERAF">
       <packagedElement xmi:type="uml:Package" xmi:id="_Zb3x8BDcEe2TWOXscLXHQA" name="Timing">
         <packagedElement xmi:type="uml:Class" xmi:id="_WO3DYBDcEe2TWOXscLXHQA" name="TimingAttributes">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="__R93kBDgEe2TWOXscLXHQA" name="joystickdriver" type="_gTsyEOgvEey1bKVmm5z5Iw" association="__R8pcBDgEe2TWOXscLXHQA">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="__R93kBDgEe2TWOXscLXHQA" type="_gTsyEOgvEey1bKVmm5z5Iw" association="__R8pcBDgEe2TWOXscLXHQA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__R-eoBDgEe2TWOXscLXHQA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__R-eoRDgEe2TWOXscLXHQA" value="1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_gyMF8xDhEe2TWOXscLXHQA" name="movementencoder" type="_waiSwOgvEey1bKVmm5z5Iw" association="_gyMF8BDhEe2TWOXscLXHQA">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_gyMF8xDhEe2TWOXscLXHQA" type="_waiSwOgvEey1bKVmm5z5Iw" association="_gyMF8BDhEe2TWOXscLXHQA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gyMF9BDhEe2TWOXscLXHQA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gyMtABDhEe2TWOXscLXHQA" value="1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_mN_AQhDhEe2TWOXscLXHQA" name="alarm" type="_Yi8LgOgvEey1bKVmm5z5Iw" association="_mN-ZMBDhEe2TWOXscLXHQA">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mN_AQhDhEe2TWOXscLXHQA" type="_Yi8LgOgvEey1bKVmm5z5Iw" association="_mN-ZMBDhEe2TWOXscLXHQA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mN_AQxDhEe2TWOXscLXHQA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mN_ARBDhEe2TWOXscLXHQA" value="1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_sCxCUhDhEe2TWOXscLXHQA" name="movementcontroller" type="_fktakOguEey1bKVmm5z5Iw" association="_sCwbQBDhEe2TWOXscLXHQA">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_sCxCUhDhEe2TWOXscLXHQA" type="_fktakOguEey1bKVmm5z5Iw" association="_sCwbQBDhEe2TWOXscLXHQA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sCxCUxDhEe2TWOXscLXHQA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sCxCVBDhEe2TWOXscLXHQA" value="1"/>
           </ownedAttribute>
@@ -767,15 +767,15 @@
           <ownedOperation xmi:type="uml:Operation" xmi:id="_v_fI0BDcEe2TWOXscLXHQA" name="AdaptObjectConstruction"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_w87zEBDdEe2TWOXscLXHQA" name="PeriodicTiming">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_V99uYhDhEe2TWOXscLXHQA" name="joystickdriver" type="_gTsyEOgvEey1bKVmm5z5Iw" association="_V99HUBDhEe2TWOXscLXHQA">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_V99uYhDhEe2TWOXscLXHQA" type="_gTsyEOgvEey1bKVmm5z5Iw" association="_V99HUBDhEe2TWOXscLXHQA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V9-VcBDhEe2TWOXscLXHQA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V9-VcRDhEe2TWOXscLXHQA" value="1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_cnbVshDhEe2TWOXscLXHQA" name="movementencoder" type="_waiSwOgvEey1bKVmm5z5Iw" association="_cnauoBDhEe2TWOXscLXHQA">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cnbVshDhEe2TWOXscLXHQA" type="_waiSwOgvEey1bKVmm5z5Iw" association="_cnauoBDhEe2TWOXscLXHQA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cnb8wBDhEe2TWOXscLXHQA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cnb8wRDhEe2TWOXscLXHQA" value="1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_xO6-IhDhEe2TWOXscLXHQA" name="movementcontroller" type="_fktakOguEey1bKVmm5z5Iw" association="_xO6XEBDhEe2TWOXscLXHQA">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_xO6-IhDhEe2TWOXscLXHQA" type="_fktakOguEey1bKVmm5z5Iw" association="_xO6XEBDhEe2TWOXscLXHQA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xO6-IxDhEe2TWOXscLXHQA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xO6-JBDhEe2TWOXscLXHQA" value="1"/>
           </ownedAttribute>
@@ -834,43 +834,43 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__R9QgBDgEe2TWOXscLXHQA" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__R9QgRDgEe2TWOXscLXHQA" key="nature" value="UML_Nature"/>
           </eAnnotations>
-          <ownedEnd xmi:type="uml:Property" xmi:id="__R-eohDgEe2TWOXscLXHQA" name="timingattributes" type="_WO3DYBDcEe2TWOXscLXHQA" association="__R8pcBDgEe2TWOXscLXHQA"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="__R-eohDgEe2TWOXscLXHQA" type="_WO3DYBDcEe2TWOXscLXHQA" association="__R8pcBDgEe2TWOXscLXHQA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_V99HUBDhEe2TWOXscLXHQA" memberEnd="_V99uYhDhEe2TWOXscLXHQA _V9-VchDhEe2TWOXscLXHQA">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_V99uYBDhEe2TWOXscLXHQA" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V99uYRDhEe2TWOXscLXHQA" key="nature" value="UML_Nature"/>
           </eAnnotations>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_V9-VchDhEe2TWOXscLXHQA" name="periodictiming" type="_w87zEBDdEe2TWOXscLXHQA" association="_V99HUBDhEe2TWOXscLXHQA"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_V9-VchDhEe2TWOXscLXHQA" type="_w87zEBDdEe2TWOXscLXHQA" association="_V99HUBDhEe2TWOXscLXHQA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_cnauoBDhEe2TWOXscLXHQA" memberEnd="_cnbVshDhEe2TWOXscLXHQA _cnb8whDhEe2TWOXscLXHQA">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cnbVsBDhEe2TWOXscLXHQA" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cnbVsRDhEe2TWOXscLXHQA" key="nature" value="UML_Nature"/>
           </eAnnotations>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_cnb8whDhEe2TWOXscLXHQA" name="periodictiming" type="_w87zEBDdEe2TWOXscLXHQA" association="_cnauoBDhEe2TWOXscLXHQA"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_cnb8whDhEe2TWOXscLXHQA" type="_w87zEBDdEe2TWOXscLXHQA" association="_cnauoBDhEe2TWOXscLXHQA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_gyMF8BDhEe2TWOXscLXHQA" memberEnd="_gyMF8xDhEe2TWOXscLXHQA _gyMtARDhEe2TWOXscLXHQA">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gyMF8RDhEe2TWOXscLXHQA" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gyMF8hDhEe2TWOXscLXHQA" key="nature" value="UML_Nature"/>
           </eAnnotations>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_gyMtARDhEe2TWOXscLXHQA" name="timingattributes" type="_WO3DYBDcEe2TWOXscLXHQA" association="_gyMF8BDhEe2TWOXscLXHQA"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_gyMtARDhEe2TWOXscLXHQA" type="_WO3DYBDcEe2TWOXscLXHQA" association="_gyMF8BDhEe2TWOXscLXHQA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_mN-ZMBDhEe2TWOXscLXHQA" memberEnd="_mN_AQhDhEe2TWOXscLXHQA _mN_ARRDhEe2TWOXscLXHQA">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mN_AQBDhEe2TWOXscLXHQA" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mN_AQRDhEe2TWOXscLXHQA" key="nature" value="UML_Nature"/>
           </eAnnotations>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_mN_ARRDhEe2TWOXscLXHQA" name="timingattributes" type="_WO3DYBDcEe2TWOXscLXHQA" association="_mN-ZMBDhEe2TWOXscLXHQA"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_mN_ARRDhEe2TWOXscLXHQA" type="_WO3DYBDcEe2TWOXscLXHQA" association="_mN-ZMBDhEe2TWOXscLXHQA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_sCwbQBDhEe2TWOXscLXHQA" memberEnd="_sCxCUhDhEe2TWOXscLXHQA _sCxCVRDhEe2TWOXscLXHQA">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_sCxCUBDhEe2TWOXscLXHQA" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_sCxCURDhEe2TWOXscLXHQA" key="nature" value="UML_Nature"/>
           </eAnnotations>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_sCxCVRDhEe2TWOXscLXHQA" name="timingattributes" type="_WO3DYBDcEe2TWOXscLXHQA" association="_sCwbQBDhEe2TWOXscLXHQA"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_sCxCVRDhEe2TWOXscLXHQA" type="_WO3DYBDcEe2TWOXscLXHQA" association="_sCwbQBDhEe2TWOXscLXHQA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_xO6XEBDhEe2TWOXscLXHQA" memberEnd="_xO6-IhDhEe2TWOXscLXHQA _xO6-JRDhEe2TWOXscLXHQA">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xO6-IBDhEe2TWOXscLXHQA" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_xO6-IRDhEe2TWOXscLXHQA" key="nature" value="UML_Nature"/>
           </eAnnotations>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_xO6-JRDhEe2TWOXscLXHQA" name="periodictiming" type="_w87zEBDdEe2TWOXscLXHQA" association="_xO6XEBDhEe2TWOXscLXHQA"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_xO6-JRDhEe2TWOXscLXHQA" type="_w87zEBDdEe2TWOXscLXHQA" association="_xO6XEBDhEe2TWOXscLXHQA"/>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_aWdK4BDcEe2TWOXscLXHQA" name="Synchonization">
@@ -907,11 +907,11 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_b1y2sBDcEe2TWOXscLXHQA" name="Precision">
         <packagedElement xmi:type="uml:Class" xmi:id="_6mYkIBDeEe2TWOXscLXHQA" name="DataFreshness">
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_78-cQxDhEe2TWOXscLXHQA" name="joystickinformation" type="_3RNFEOguEey1bKVmm5z5Iw" association="_78-cQBDhEe2TWOXscLXHQA">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_78-cQxDhEe2TWOXscLXHQA" type="_3RNFEOguEey1bKVmm5z5Iw" association="_78-cQBDhEe2TWOXscLXHQA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_78-cRBDhEe2TWOXscLXHQA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_78-cRRDhEe2TWOXscLXHQA" value="1"/>
           </ownedAttribute>
-          <ownedAttribute xmi:type="uml:Property" xmi:id="_DVC2ARDiEe2TWOXscLXHQA" name="movementinformation" type="_PkLvgOgpEey1bKVmm5z5Iw" association="_DVBn4BDiEe2TWOXscLXHQA">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DVC2ARDiEe2TWOXscLXHQA" type="_PkLvgOgpEey1bKVmm5z5Iw" association="_DVBn4BDiEe2TWOXscLXHQA">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DVC2AhDiEe2TWOXscLXHQA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DVC2AxDiEe2TWOXscLXHQA" value="1"/>
           </ownedAttribute>
@@ -944,13 +944,13 @@
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_78-cQRDhEe2TWOXscLXHQA" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_78-cQhDhEe2TWOXscLXHQA" key="nature" value="UML_Nature"/>
           </eAnnotations>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_78_DUBDhEe2TWOXscLXHQA" name="datafreshness" type="_6mYkIBDeEe2TWOXscLXHQA" association="_78-cQBDhEe2TWOXscLXHQA"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_78_DUBDhEe2TWOXscLXHQA" type="_6mYkIBDeEe2TWOXscLXHQA" association="_78-cQBDhEe2TWOXscLXHQA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Association" xmi:id="_DVBn4BDiEe2TWOXscLXHQA" memberEnd="_DVC2ARDiEe2TWOXscLXHQA _DVC2BBDiEe2TWOXscLXHQA">
           <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DVCO8BDiEe2TWOXscLXHQA" source="org.eclipse.papyrus">
             <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DVC2ABDiEe2TWOXscLXHQA" key="nature" value="UML_Nature"/>
           </eAnnotations>
-          <ownedEnd xmi:type="uml:Property" xmi:id="_DVC2BBDiEe2TWOXscLXHQA" name="datafreshness" type="_6mYkIBDeEe2TWOXscLXHQA" association="_DVBn4BDiEe2TWOXscLXHQA"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_DVC2BBDiEe2TWOXscLXHQA" type="_6mYkIBDeEe2TWOXscLXHQA" association="_DVBn4BDiEe2TWOXscLXHQA"/>
         </packagedElement>
       </packagedElement>
     </packagedElement>
@@ -992,7 +992,7 @@
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="__rwD8PlPEeyUKJksCe3nVg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__rwrAPlPEeyUKJksCe3nVg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../AMoDE-RT/AMoDE-RT.profile.uml#_1-yVYBPoEe2DgdmO0TrBQw"/>
+        <references xmi:type="ecore:EPackage" href="../AMoDE-RT/AMoDE-RT.profile.uml#_p4S4EBTBEe2-99wv5HbKpQ"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../AMoDE-RT/AMoDE-RT.profile.uml#_U1-koOf6Eey1bKVmm5z5Iw"/>
     </profileApplication>
@@ -1076,15 +1076,41 @@
   <AMoDERT.AspectsModeling:Pointcut xmi:id="_X96pYBDgEe2TWOXscLXHQA" base_Operation="_LXoeUBDgEe2TWOXscLXHQA"/>
   <AMoDERT.AspectsModeling:Pointcut xmi:id="_YvtSsBDgEe2TWOXscLXHQA" base_Operation="_JBWjcBDgEe2TWOXscLXHQA"/>
   <AMoDERT.AspectsModeling:Aspect xmi:id="_yFnLABDgEe2TWOXscLXHQA" base_Class="_FcJ-YBDgEe2TWOXscLXHQA"/>
-  <AMoDERT.AspectsModeling:Crosscut xmi:id="_BZ_7EBDhEe2TWOXscLXHQA" base_Association="__R8pcBDgEe2TWOXscLXHQA" Deadline="10ms" Priority="2" WCET="1ms"/>
-  <AMoDERT.AspectsModeling:Crosscut xmi:id="_XDek8BDhEe2TWOXscLXHQA" base_Association="_V99HUBDhEe2TWOXscLXHQA" Period="10ms"/>
-  <AMoDERT.AspectsModeling:Crosscut xmi:id="_dsv_ABDhEe2TWOXscLXHQA" base_Association="_cnauoBDhEe2TWOXscLXHQA" Period="10ms"/>
-  <AMoDERT.AspectsModeling:Crosscut xmi:id="_h1CqEBDhEe2TWOXscLXHQA" base_Association="_gyMF8BDhEe2TWOXscLXHQA" Deadline="10ms" Priority="2" WCET="2ms"/>
-  <AMoDERT.AspectsModeling:Crosscut xmi:id="_nDed0BDhEe2TWOXscLXHQA" base_Association="_mN-ZMBDhEe2TWOXscLXHQA" Deadline="5ms" Priority="1" WCET="2ms"/>
-  <AMoDERT.AspectsModeling:Crosscut xmi:id="_s8CMoBDhEe2TWOXscLXHQA" base_Association="_sCwbQBDhEe2TWOXscLXHQA" Deadline="50ms" Priority="2" WCET="10ms"/>
-  <AMoDERT.AspectsModeling:Crosscut xmi:id="_yFCGwBDhEe2TWOXscLXHQA" base_Association="_xO6XEBDhEe2TWOXscLXHQA" Period="50ms"/>
-  <AMoDERT.AspectsModeling:Crosscut xmi:id="_82T4ABDhEe2TWOXscLXHQA" base_Association="_78-cQBDhEe2TWOXscLXHQA" TimeStamp="10ms"/>
-  <AMoDERT.AspectsModeling:Crosscut xmi:id="_EOPu4BDiEe2TWOXscLXHQA" base_Association="_DVBn4BDiEe2TWOXscLXHQA" TimeStamp="10ms"/>
+  <AMoDERT.AspectsModeling:Crosscut xmi:id="_BZ_7EBDhEe2TWOXscLXHQA" base_Association="__R8pcBDgEe2TWOXscLXHQA">
+    <Attributes>Deadline=10ms</Attributes>
+    <Attributes>Priority=2</Attributes>
+    <Attributes>WCET=1ms</Attributes>
+  </AMoDERT.AspectsModeling:Crosscut>
+  <AMoDERT.AspectsModeling:Crosscut xmi:id="_XDek8BDhEe2TWOXscLXHQA" base_Association="_V99HUBDhEe2TWOXscLXHQA">
+    <Attributes>Period=10ms</Attributes>
+  </AMoDERT.AspectsModeling:Crosscut>
+  <AMoDERT.AspectsModeling:Crosscut xmi:id="_dsv_ABDhEe2TWOXscLXHQA" base_Association="_cnauoBDhEe2TWOXscLXHQA">
+    <Attributes>Period=10ms</Attributes>
+  </AMoDERT.AspectsModeling:Crosscut>
+  <AMoDERT.AspectsModeling:Crosscut xmi:id="_h1CqEBDhEe2TWOXscLXHQA" base_Association="_gyMF8BDhEe2TWOXscLXHQA">
+    <Attributes>Deadline=10ms</Attributes>
+    <Attributes>Priority=2</Attributes>
+    <Attributes>WCET=2ms</Attributes>
+  </AMoDERT.AspectsModeling:Crosscut>
+  <AMoDERT.AspectsModeling:Crosscut xmi:id="_nDed0BDhEe2TWOXscLXHQA" base_Association="_mN-ZMBDhEe2TWOXscLXHQA">
+    <Attributes>Deadline=5ms</Attributes>
+    <Attributes>Priority=1</Attributes>
+    <Attributes>WCET=2ms</Attributes>
+  </AMoDERT.AspectsModeling:Crosscut>
+  <AMoDERT.AspectsModeling:Crosscut xmi:id="_s8CMoBDhEe2TWOXscLXHQA" base_Association="_sCwbQBDhEe2TWOXscLXHQA">
+    <Attributes>Deadline=50ms</Attributes>
+    <Attributes>Priority=2</Attributes>
+    <Attributes>WCET=10ms</Attributes>
+  </AMoDERT.AspectsModeling:Crosscut>
+  <AMoDERT.AspectsModeling:Crosscut xmi:id="_yFCGwBDhEe2TWOXscLXHQA" base_Association="_xO6XEBDhEe2TWOXscLXHQA">
+    <Attributes>Period=50ms</Attributes>
+  </AMoDERT.AspectsModeling:Crosscut>
+  <AMoDERT.AspectsModeling:Crosscut xmi:id="_82T4ABDhEe2TWOXscLXHQA" base_Association="_78-cQBDhEe2TWOXscLXHQA">
+    <Attributes>TimeStamp=10ms</Attributes>
+  </AMoDERT.AspectsModeling:Crosscut>
+  <AMoDERT.AspectsModeling:Crosscut xmi:id="_EOPu4BDiEe2TWOXscLXHQA" base_Association="_DVBn4BDiEe2TWOXscLXHQA">
+    <Attributes>TimeStamp=10ms</Attributes>
+  </AMoDERT.AspectsModeling:Crosscut>
   <AMoDERT.AspectsModeling:JoinPoint xmi:id="_2HeRIBGUEe2S89iiM9m_3Q" base_Class="_x8ooYBGUEe2S89iiM9m_3Q"/>
   <GRM:SchedulableResource xmi:id="_2HuIwBGUEe2S89iiM9m_3Q" base_Classifier="_x8ooYBGUEe2S89iiM9m_3Q"/>
   <AMoDERT.AspectsModeling:JoinPoint xmi:id="_-qjFcBGUEe2S89iiM9m_3Q" base_Class="_8m5LoBGUEe2S89iiM9m_3Q"/>

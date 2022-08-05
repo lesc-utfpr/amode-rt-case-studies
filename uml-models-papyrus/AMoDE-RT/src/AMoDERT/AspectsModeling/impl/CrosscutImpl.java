@@ -5,14 +5,17 @@ package AMoDERT.AspectsModeling.impl;
 import AMoDERT.AspectsModeling.AspectsModelingPackage;
 import AMoDERT.AspectsModeling.Crosscut;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Usage;
 
@@ -26,11 +29,7 @@ import org.eclipse.uml2.uml.Usage;
  * <ul>
  *   <li>{@link AMoDERT.AspectsModeling.impl.CrosscutImpl#getBase_Association <em>Base Association</em>}</li>
  *   <li>{@link AMoDERT.AspectsModeling.impl.CrosscutImpl#getBase_Usage <em>Base Usage</em>}</li>
- *   <li>{@link AMoDERT.AspectsModeling.impl.CrosscutImpl#getPeriod <em>Period</em>}</li>
- *   <li>{@link AMoDERT.AspectsModeling.impl.CrosscutImpl#getDeadline <em>Deadline</em>}</li>
- *   <li>{@link AMoDERT.AspectsModeling.impl.CrosscutImpl#getPriority <em>Priority</em>}</li>
- *   <li>{@link AMoDERT.AspectsModeling.impl.CrosscutImpl#getWCET <em>WCET</em>}</li>
- *   <li>{@link AMoDERT.AspectsModeling.impl.CrosscutImpl#getTimeStamp <em>Time Stamp</em>}</li>
+ *   <li>{@link AMoDERT.AspectsModeling.impl.CrosscutImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,104 +56,14 @@ public class CrosscutImpl extends MinimalEObjectImpl.Container implements Crossc
 	protected Usage base_Usage;
 
 	/**
-	 * The default value of the '{@link #getPeriod() <em>Period</em>}' attribute.
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPeriod()
+	 * @see #getAttributes()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PERIOD_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPeriod()
-	 * @generated
-	 * @ordered
-	 */
-	protected String period = PERIOD_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeadline()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DEADLINE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDeadline()
-	 * @generated
-	 * @ordered
-	 */
-	protected String deadline = DEADLINE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPriority()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRIORITY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPriority()
-	 * @generated
-	 * @ordered
-	 */
-	protected String priority = PRIORITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getWCET() <em>WCET</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWCET()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WCET_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWCET() <em>WCET</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWCET()
-	 * @generated
-	 * @ordered
-	 */
-	protected String wcet = WCET_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTimeStamp() <em>Time Stamp</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTimeStamp()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TIME_STAMP_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTimeStamp() <em>Time Stamp</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTimeStamp()
-	 * @generated
-	 * @ordered
-	 */
-	protected String timeStamp = TIME_STAMP_EDEFAULT;
+	protected EList<String> attributes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,104 +165,11 @@ public class CrosscutImpl extends MinimalEObjectImpl.Container implements Crossc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPeriod() {
-		return period;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPeriod(String newPeriod) {
-		String oldPeriod = period;
-		period = newPeriod;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AspectsModelingPackage.CROSSCUT__PERIOD, oldPeriod, period));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDeadline() {
-		return deadline;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDeadline(String newDeadline) {
-		String oldDeadline = deadline;
-		deadline = newDeadline;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AspectsModelingPackage.CROSSCUT__DEADLINE, oldDeadline, deadline));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPriority() {
-		return priority;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPriority(String newPriority) {
-		String oldPriority = priority;
-		priority = newPriority;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AspectsModelingPackage.CROSSCUT__PRIORITY, oldPriority, priority));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getWCET() {
-		return wcet;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setWCET(String newWCET) {
-		String oldWCET = wcet;
-		wcet = newWCET;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AspectsModelingPackage.CROSSCUT__WCET, oldWCET, wcet));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getTimeStamp() {
-		return timeStamp;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTimeStamp(String newTimeStamp) {
-		String oldTimeStamp = timeStamp;
-		timeStamp = newTimeStamp;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AspectsModelingPackage.CROSSCUT__TIME_STAMP, oldTimeStamp, timeStamp));
+	public EList<String> getAttributes() {
+		if (attributes == null) {
+			attributes = new EDataTypeUniqueEList<String>(String.class, this, AspectsModelingPackage.CROSSCUT__ATTRIBUTES);
+		}
+		return attributes;
 	}
 
 	/**
@@ -370,16 +186,8 @@ public class CrosscutImpl extends MinimalEObjectImpl.Container implements Crossc
 			case AspectsModelingPackage.CROSSCUT__BASE_USAGE:
 				if (resolve) return getBase_Usage();
 				return basicGetBase_Usage();
-			case AspectsModelingPackage.CROSSCUT__PERIOD:
-				return getPeriod();
-			case AspectsModelingPackage.CROSSCUT__DEADLINE:
-				return getDeadline();
-			case AspectsModelingPackage.CROSSCUT__PRIORITY:
-				return getPriority();
-			case AspectsModelingPackage.CROSSCUT__WCET:
-				return getWCET();
-			case AspectsModelingPackage.CROSSCUT__TIME_STAMP:
-				return getTimeStamp();
+			case AspectsModelingPackage.CROSSCUT__ATTRIBUTES:
+				return getAttributes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -389,6 +197,7 @@ public class CrosscutImpl extends MinimalEObjectImpl.Container implements Crossc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -398,20 +207,9 @@ public class CrosscutImpl extends MinimalEObjectImpl.Container implements Crossc
 			case AspectsModelingPackage.CROSSCUT__BASE_USAGE:
 				setBase_Usage((Usage)newValue);
 				return;
-			case AspectsModelingPackage.CROSSCUT__PERIOD:
-				setPeriod((String)newValue);
-				return;
-			case AspectsModelingPackage.CROSSCUT__DEADLINE:
-				setDeadline((String)newValue);
-				return;
-			case AspectsModelingPackage.CROSSCUT__PRIORITY:
-				setPriority((String)newValue);
-				return;
-			case AspectsModelingPackage.CROSSCUT__WCET:
-				setWCET((String)newValue);
-				return;
-			case AspectsModelingPackage.CROSSCUT__TIME_STAMP:
-				setTimeStamp((String)newValue);
+			case AspectsModelingPackage.CROSSCUT__ATTRIBUTES:
+				getAttributes().clear();
+				getAttributes().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -431,20 +229,8 @@ public class CrosscutImpl extends MinimalEObjectImpl.Container implements Crossc
 			case AspectsModelingPackage.CROSSCUT__BASE_USAGE:
 				setBase_Usage((Usage)null);
 				return;
-			case AspectsModelingPackage.CROSSCUT__PERIOD:
-				setPeriod(PERIOD_EDEFAULT);
-				return;
-			case AspectsModelingPackage.CROSSCUT__DEADLINE:
-				setDeadline(DEADLINE_EDEFAULT);
-				return;
-			case AspectsModelingPackage.CROSSCUT__PRIORITY:
-				setPriority(PRIORITY_EDEFAULT);
-				return;
-			case AspectsModelingPackage.CROSSCUT__WCET:
-				setWCET(WCET_EDEFAULT);
-				return;
-			case AspectsModelingPackage.CROSSCUT__TIME_STAMP:
-				setTimeStamp(TIME_STAMP_EDEFAULT);
+			case AspectsModelingPackage.CROSSCUT__ATTRIBUTES:
+				getAttributes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -462,16 +248,8 @@ public class CrosscutImpl extends MinimalEObjectImpl.Container implements Crossc
 				return base_Association != null;
 			case AspectsModelingPackage.CROSSCUT__BASE_USAGE:
 				return base_Usage != null;
-			case AspectsModelingPackage.CROSSCUT__PERIOD:
-				return PERIOD_EDEFAULT == null ? period != null : !PERIOD_EDEFAULT.equals(period);
-			case AspectsModelingPackage.CROSSCUT__DEADLINE:
-				return DEADLINE_EDEFAULT == null ? deadline != null : !DEADLINE_EDEFAULT.equals(deadline);
-			case AspectsModelingPackage.CROSSCUT__PRIORITY:
-				return PRIORITY_EDEFAULT == null ? priority != null : !PRIORITY_EDEFAULT.equals(priority);
-			case AspectsModelingPackage.CROSSCUT__WCET:
-				return WCET_EDEFAULT == null ? wcet != null : !WCET_EDEFAULT.equals(wcet);
-			case AspectsModelingPackage.CROSSCUT__TIME_STAMP:
-				return TIME_STAMP_EDEFAULT == null ? timeStamp != null : !TIME_STAMP_EDEFAULT.equals(timeStamp);
+			case AspectsModelingPackage.CROSSCUT__ATTRIBUTES:
+				return attributes != null && !attributes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -486,16 +264,8 @@ public class CrosscutImpl extends MinimalEObjectImpl.Container implements Crossc
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (Period: ");
-		result.append(period);
-		result.append(", Deadline: ");
-		result.append(deadline);
-		result.append(", Priority: ");
-		result.append(priority);
-		result.append(", WCET: ");
-		result.append(wcet);
-		result.append(", TimeStamp: ");
-		result.append(timeStamp);
+		result.append(" (Attributes: ");
+		result.append(attributes);
 		result.append(')');
 		return result.toString();
 	}

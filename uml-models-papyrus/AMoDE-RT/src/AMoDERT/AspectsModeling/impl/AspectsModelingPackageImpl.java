@@ -231,44 +231,8 @@ public class AspectsModelingPackageImpl extends EPackageImpl implements AspectsM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCrosscut_Period() {
+	public EAttribute getCrosscut_Attributes() {
 		return (EAttribute)crosscutEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCrosscut_Deadline() {
-		return (EAttribute)crosscutEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCrosscut_Priority() {
-		return (EAttribute)crosscutEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCrosscut_WCET() {
-		return (EAttribute)crosscutEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCrosscut_TimeStamp() {
-		return (EAttribute)crosscutEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -515,11 +479,7 @@ public class AspectsModelingPackageImpl extends EPackageImpl implements AspectsM
 		crosscutEClass = createEClass(CROSSCUT);
 		createEReference(crosscutEClass, CROSSCUT__BASE_ASSOCIATION);
 		createEReference(crosscutEClass, CROSSCUT__BASE_USAGE);
-		createEAttribute(crosscutEClass, CROSSCUT__PERIOD);
-		createEAttribute(crosscutEClass, CROSSCUT__DEADLINE);
-		createEAttribute(crosscutEClass, CROSSCUT__PRIORITY);
-		createEAttribute(crosscutEClass, CROSSCUT__WCET);
-		createEAttribute(crosscutEClass, CROSSCUT__TIME_STAMP);
+		createEAttribute(crosscutEClass, CROSSCUT__ATTRIBUTES);
 
 		executionEClass = createEClass(EXECUTION);
 		createEReference(executionEClass, EXECUTION__BASE_MESSAGE);
@@ -593,11 +553,7 @@ public class AspectsModelingPackageImpl extends EPackageImpl implements AspectsM
 		initEClass(crosscutEClass, Crosscut.class, "Crosscut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCrosscut_Base_Association(), theUMLPackage.getAssociation(), null, "base_Association", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCrosscut_Base_Usage(), theUMLPackage.getUsage(), null, "base_Usage", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCrosscut_Period(), ecorePackage.getEString(), "Period", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCrosscut_Deadline(), ecorePackage.getEString(), "Deadline", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCrosscut_Priority(), ecorePackage.getEString(), "Priority", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCrosscut_WCET(), ecorePackage.getEString(), "WCET", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCrosscut_TimeStamp(), ecorePackage.getEString(), "TimeStamp", null, 0, 1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCrosscut_Attributes(), ecorePackage.getEString(), "Attributes", null, 0, -1, Crosscut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(executionEClass, Execution.class, "Execution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExecution_Base_Message(), theUMLPackage.getMessage(), null, "base_Message", null, 0, 1, Execution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

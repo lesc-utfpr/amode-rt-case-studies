@@ -159,49 +159,13 @@ public interface AspectsModelingPackage extends EPackage {
 	int CROSSCUT__BASE_USAGE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Period</b></em>' attribute.
+	 * The feature id for the '<em><b>Attributes</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CROSSCUT__PERIOD = 2;
-
-	/**
-	 * The feature id for the '<em><b>Deadline</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CROSSCUT__DEADLINE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Priority</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CROSSCUT__PRIORITY = 4;
-
-	/**
-	 * The feature id for the '<em><b>WCET</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CROSSCUT__WCET = 5;
-
-	/**
-	 * The feature id for the '<em><b>Time Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CROSSCUT__TIME_STAMP = 6;
+	int CROSSCUT__ATTRIBUTES = 2;
 
 	/**
 	 * The number of structural features of the '<em>Crosscut</em>' class.
@@ -210,7 +174,7 @@ public interface AspectsModelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CROSSCUT_FEATURE_COUNT = 7;
+	int CROSSCUT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Crosscut</em>' class.
@@ -599,59 +563,15 @@ public interface AspectsModelingPackage extends EPackage {
 	EReference getCrosscut_Base_Usage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link AMoDERT.AspectsModeling.Crosscut#getPeriod <em>Period</em>}'.
+	 * Returns the meta object for the attribute list '{@link AMoDERT.AspectsModeling.Crosscut#getAttributes <em>Attributes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Period</em>'.
-	 * @see AMoDERT.AspectsModeling.Crosscut#getPeriod()
+	 * @return the meta object for the attribute list '<em>Attributes</em>'.
+	 * @see AMoDERT.AspectsModeling.Crosscut#getAttributes()
 	 * @see #getCrosscut()
 	 * @generated
 	 */
-	EAttribute getCrosscut_Period();
-
-	/**
-	 * Returns the meta object for the attribute '{@link AMoDERT.AspectsModeling.Crosscut#getDeadline <em>Deadline</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Deadline</em>'.
-	 * @see AMoDERT.AspectsModeling.Crosscut#getDeadline()
-	 * @see #getCrosscut()
-	 * @generated
-	 */
-	EAttribute getCrosscut_Deadline();
-
-	/**
-	 * Returns the meta object for the attribute '{@link AMoDERT.AspectsModeling.Crosscut#getPriority <em>Priority</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Priority</em>'.
-	 * @see AMoDERT.AspectsModeling.Crosscut#getPriority()
-	 * @see #getCrosscut()
-	 * @generated
-	 */
-	EAttribute getCrosscut_Priority();
-
-	/**
-	 * Returns the meta object for the attribute '{@link AMoDERT.AspectsModeling.Crosscut#getWCET <em>WCET</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>WCET</em>'.
-	 * @see AMoDERT.AspectsModeling.Crosscut#getWCET()
-	 * @see #getCrosscut()
-	 * @generated
-	 */
-	EAttribute getCrosscut_WCET();
-
-	/**
-	 * Returns the meta object for the attribute '{@link AMoDERT.AspectsModeling.Crosscut#getTimeStamp <em>Time Stamp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time Stamp</em>'.
-	 * @see AMoDERT.AspectsModeling.Crosscut#getTimeStamp()
-	 * @see #getCrosscut()
-	 * @generated
-	 */
-	EAttribute getCrosscut_TimeStamp();
+	EAttribute getCrosscut_Attributes();
 
 	/**
 	 * Returns the meta object for class '{@link AMoDERT.AspectsModeling.Execution <em>Execution</em>}'.
@@ -987,44 +907,12 @@ public interface AspectsModelingPackage extends EPackage {
 		EReference CROSSCUT__BASE_USAGE = eINSTANCE.getCrosscut_Base_Usage();
 
 		/**
-		 * The meta object literal for the '<em><b>Period</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Attributes</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CROSSCUT__PERIOD = eINSTANCE.getCrosscut_Period();
-
-		/**
-		 * The meta object literal for the '<em><b>Deadline</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CROSSCUT__DEADLINE = eINSTANCE.getCrosscut_Deadline();
-
-		/**
-		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CROSSCUT__PRIORITY = eINSTANCE.getCrosscut_Priority();
-
-		/**
-		 * The meta object literal for the '<em><b>WCET</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CROSSCUT__WCET = eINSTANCE.getCrosscut_WCET();
-
-		/**
-		 * The meta object literal for the '<em><b>Time Stamp</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CROSSCUT__TIME_STAMP = eINSTANCE.getCrosscut_TimeStamp();
+		EAttribute CROSSCUT__ATTRIBUTES = eINSTANCE.getCrosscut_Attributes();
 
 		/**
 		 * The meta object literal for the '{@link AMoDERT.AspectsModeling.impl.ExecutionImpl <em>Execution</em>}' class.

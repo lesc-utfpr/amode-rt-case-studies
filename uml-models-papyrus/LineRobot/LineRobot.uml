@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_iul50L9MEe2kwZuWWwV4XA" name="LineRobot">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_1_I-cMGyEe2LLcC67kacBQ">
+    <body>hashmap would make sense
+but might make mathod desciprtion 
+more complex and might require
+additional mapping rules that are not there yet
+</body>
+  </ownedComment>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_iwZ3sL9MEe2kwZuWWwV4XA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_mNJ18L9NEe2kwZuWWwV4XA" name="MovementInterface">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_oFBI8L9tEe2kwZuWWwV4XA" name="isMovingGeneral" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_v4blcL9uEe2kwZuWWwV4XA" name="isMovingRight" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_y9tUUL9uEe2kwZuWWwV4XA" name="isMovingLeft" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1bHx8L9uEe2kwZuWWwV4XA" name="isMovingForward" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_YHgLEL9nEe2kwZuWWwV4XA" name="move">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_YjGTML9tEe2kwZuWWwV4XA" name="left">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_akHIsL9tEe2kwZuWWwV4XA" name="forward">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_emAQ0L9tEe2kwZuWWwV4XA" name="right">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_AyCIML9hEe2kwZuWWwV4XA" name="MovementController">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_AGWlkL9vEe2kwZuWWwV4XA" name="moveInter" visibility="private" type="_mNJ18L9NEe2kwZuWWwV4XA" association="_AGTiQL9vEe2kwZuWWwV4XA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8zk_UMG1Ee2LLcC67kacBQ" name="sensInfo" visibility="private" type="_x2_nEL9yEe2kwZuWWwV4XA" association="_8zijEMG1Ee2LLcC67kacBQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_PEy0cL9nEe2kwZuWWwV4XA" name="initialteLineFollowing">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_25QV8MG1Ee2LLcC67kacBQ" name="color">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_TZwpkL9nEe2kwZuWWwV4XA" name="junctionColorTurn">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_0ZERIMG1Ee2LLcC67kacBQ" name="color">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SutH8MG4Ee2LLcC67kacBQ" name="direction">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_AtqVoMG-Ee2LLcC67kacBQ" name="breakLineFollowing"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Eh9GoMG-Ee2LLcC67kacBQ" name="update"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_AGTiQL9vEe2kwZuWWwV4XA" memberEnd="_AGWlkL9vEe2kwZuWWwV4XA _AGiLwL9vEe2kwZuWWwV4XA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AGVXcL9vEe2kwZuWWwV4XA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AGVXcb9vEe2kwZuWWwV4XA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_AGiLwL9vEe2kwZuWWwV4XA" type="_AyCIML9hEe2kwZuWWwV4XA" association="_AGTiQL9vEe2kwZuWWwV4XA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_viwwEL9xEe2kwZuWWwV4XA" name="Navigation">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_1CT3EL9zEe2kwZuWWwV4XA" name="isOnJunction" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_B2II4MEWEe26IsGNZUAC7A" name="moveContr" visibility="private" type="_AyCIML9hEe2kwZuWWwV4XA" association="_B1yKoMEWEe26IsGNZUAC7A"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_E7uV8MEYEe26IsGNZUAC7A" name="sensInfo" visibility="private" type="_x2_nEL9yEe2kwZuWWwV4XA" association="_E7tH0MEYEe26IsGNZUAC7A"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_7kUPwMEZEe26IsGNZUAC7A" name="currentNode" visibility="private" type="_tMSaQMEZEe26IsGNZUAC7A" association="_7kSakMEZEe26IsGNZUAC7A"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_CXJ9oMGrEe2LLcC67kacBQ" name="currentLineColor" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_0leq0MEYEe26IsGNZUAC7A" name="update"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_YFVMMMGpEe2LLcC67kacBQ" name="identifyJunction" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_fDlXwMGpEe2LLcC67kacBQ" name="sensorRight"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_gW2WcMGpEe2LLcC67kacBQ" name="sensorLeft"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_rUNmcMGqEe2LLcC67kacBQ" name="isOnJuction" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_b3UEgMGzEe2LLcC67kacBQ" name="checkForGoalColor">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_imAKEMGzEe2LLcC67kacBQ" name="GoalColorIndex">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_cT9SUMG1Ee2LLcC67kacBQ" name="SensorWithGoalColor" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_x2_nEL9yEe2kwZuWWwV4XA" name="sensorInformation">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_urhqUMEXEe26IsGNZUAC7A" name="colorSensorRight" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_zLa9EMEXEe26IsGNZUAC7A" name="colorSensorRight" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_WZNggMEYEe26IsGNZUAC7A" name="update"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_B1yKoMEWEe26IsGNZUAC7A" memberEnd="_B2II4MEWEe26IsGNZUAC7A _B2OPgMEWEe26IsGNZUAC7A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_B2FFkMEWEe26IsGNZUAC7A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_B2FsoMEWEe26IsGNZUAC7A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_B2OPgMEWEe26IsGNZUAC7A" type="_viwwEL9xEe2kwZuWWwV4XA" association="_B1yKoMEWEe26IsGNZUAC7A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_E7tH0MEYEe26IsGNZUAC7A" memberEnd="_E7uV8MEYEe26IsGNZUAC7A _E7u9AcEYEe26IsGNZUAC7A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_E7tu4MEYEe26IsGNZUAC7A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_E7tu4cEYEe26IsGNZUAC7A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_E7u9AcEYEe26IsGNZUAC7A" type="_viwwEL9xEe2kwZuWWwV4XA" association="_E7tH0MEYEe26IsGNZUAC7A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_tMSaQMEZEe26IsGNZUAC7A" name="Node">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Ee8Q4MGoEe2LLcC67kacBQ" name="adjNode" visibility="private" type="_tMSaQMEZEe26IsGNZUAC7A" association="_EevckMGoEe2LLcC67kacBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ee838MGoEe2LLcC67kacBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ee9fAMGoEe2LLcC67kacBQ" value="4"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_tz1VcMGoEe2LLcC67kacBQ" name="adjNodeNorth" type="_tMSaQMEZEe26IsGNZUAC7A"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_whAtYMGoEe2LLcC67kacBQ" name="adjNodeSouth" type="_tMSaQMEZEe26IsGNZUAC7A"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_yD4OUMGoEe2LLcC67kacBQ" name="adjNodeWest" type="_tMSaQMEZEe26IsGNZUAC7A"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_zf9KwMGoEe2LLcC67kacBQ" name="adjNodeEast" type="_tMSaQMEZEe26IsGNZUAC7A"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_zSYaEMGuEe2LLcC67kacBQ" name="Label" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_LeMd0MGvEe2LLcC67kacBQ" name="ColorField">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_WmRTkMGxEe2LLcC67kacBQ" annotatedElement="_LeMd0MGvEe2LLcC67kacBQ">
+        <body>the Colorfield stores information about the color of the colors of the edges
+0 is North
+1 is South
+2 is East
+3 is West</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wp1YkMGwEe2LLcC67kacBQ" value="4"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wqPBMMGwEe2LLcC67kacBQ" value="4"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_k5PU0MGvEe2LLcC67kacBQ" name="searchForLabel" visibility="public">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_8IibEMGxEe2LLcC67kacBQ" annotatedElement="_k5PU0MGvEe2LLcC67kacBQ">
+        <body>searches for a label in the adjecent nodes
+returns the index(representing direction) for the colorfield</body>
+      </ownedComment>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_pCNVUMGvEe2LLcC67kacBQ" name="Label">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_neiGoMGwEe2LLcC67kacBQ" name="ColorfieldIndex" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7kSakMEZEe26IsGNZUAC7A" memberEnd="_7kUPwMEZEe26IsGNZUAC7A _7kVd4MEZEe26IsGNZUAC7A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7kTBoMEZEe26IsGNZUAC7A" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7kTosMEZEe26IsGNZUAC7A" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7kVd4MEZEe26IsGNZUAC7A" visibility="public" type="_viwwEL9xEe2kwZuWWwV4XA" association="_7kSakMEZEe26IsGNZUAC7A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_EevckMGoEe2LLcC67kacBQ" memberEnd="_Ee8Q4MGoEe2LLcC67kacBQ _Ee-GEMGoEe2LLcC67kacBQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ee6bsMGoEe2LLcC67kacBQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ee6bscGoEe2LLcC67kacBQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Ee-GEMGoEe2LLcC67kacBQ" type="_tMSaQMEZEe26IsGNZUAC7A" association="_EevckMGoEe2LLcC67kacBQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8zijEMG1Ee2LLcC67kacBQ" memberEnd="_8zk_UMG1Ee2LLcC67kacBQ _8zlmYsG1Ee2LLcC67kacBQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8zkYQMG1Ee2LLcC67kacBQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8zkYQcG1Ee2LLcC67kacBQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_8zlmYsG1Ee2LLcC67kacBQ" type="_AyCIML9hEe2kwZuWWwV4XA" association="_8zijEMG1Ee2LLcC67kacBQ"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_ivuiQL9MEe2kwZuWWwV4XA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ivvwYb9MEe2kwZuWWwV4XA" source="PapyrusVersion">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ivvwYr9MEe2kwZuWWwV4XA" key="Version" value="0.0.12"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ivvwY79MEe2kwZuWWwV4XA" key="Comment" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ivvwZL9MEe2kwZuWWwV4XA" key="Copyright" value=""/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ivvwZb9MEe2kwZuWWwV4XA" key="Date" value="2022-08-05"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ivvwZr9MEe2kwZuWWwV4XA" key="Author" value=""/>
+    </eAnnotations>
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ivvwYL9MEe2kwZuWWwV4XA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="/AMoDE-RT/AMoDE-RT.profile.uml#_p4S4EBTBEe2-99wv5HbKpQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="/AMoDE-RT/AMoDE-RT.profile.uml#_U1-koOf6Eey1bKVmm5z5Iw"/>
+  </profileApplication>
+</uml:Model>

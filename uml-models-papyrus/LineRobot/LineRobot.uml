@@ -88,8 +88,8 @@ additional mapping rules that are not there yet
         </ownedComment>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_0gKzoMy2Ee2cm-v7OLxYCQ" name="LinesToCross"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_7b6VYMzEEe2cm-v7OLxYCQ" name="turnDirection"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_0gKzoMy2Ee2cm-v7OLxYCQ" name="LinesToCross" visibility="private"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7b6VYMzEEe2cm-v7OLxYCQ" name="turnDirection" visibility="private"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_0leq0MEYEe26IsGNZUAC7A" name="update"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_YFVMMMGpEe2LLcC67kacBQ" name="identifyJunction" visibility="public">
         <ownedComment xmi:type="uml:Comment" xmi:id="_ZyJUAMzFEe2cm-v7OLxYCQ" annotatedElement="_YFVMMMGpEe2LLcC67kacBQ">
@@ -150,24 +150,12 @@ its turning wheel in order to make the turn</body>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ee838MGoEe2LLcC67kacBQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ee9fAMGoEe2LLcC67kacBQ" value="4"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_tz1VcMGoEe2LLcC67kacBQ" name="adjNodeNorth" type="_tMSaQMEZEe26IsGNZUAC7A"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_whAtYMGoEe2LLcC67kacBQ" name="adjNodeSouth" type="_tMSaQMEZEe26IsGNZUAC7A"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_yD4OUMGoEe2LLcC67kacBQ" name="adjNodeWest" type="_tMSaQMEZEe26IsGNZUAC7A"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_zf9KwMGoEe2LLcC67kacBQ" name="adjNodeEast" type="_tMSaQMEZEe26IsGNZUAC7A"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_tz1VcMGoEe2LLcC67kacBQ" name="adjNodeNorth" visibility="private" type="_tMSaQMEZEe26IsGNZUAC7A"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_whAtYMGoEe2LLcC67kacBQ" name="adjNodeSouth" visibility="private" type="_tMSaQMEZEe26IsGNZUAC7A"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yD4OUMGoEe2LLcC67kacBQ" name="adjNodeWest" visibility="private" type="_tMSaQMEZEe26IsGNZUAC7A"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_zf9KwMGoEe2LLcC67kacBQ" name="adjNodeEast" visibility="private" type="_tMSaQMEZEe26IsGNZUAC7A"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_zSYaEMGuEe2LLcC67kacBQ" name="Label" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_LeMd0MGvEe2LLcC67kacBQ" name="ColorField">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_WmRTkMGxEe2LLcC67kacBQ" annotatedElement="_LeMd0MGvEe2LLcC67kacBQ">
-          <body>the Colorfield stores information about the color of the colors of the edges
-0 is North
-1 is South
-2 is East
-3 is West</body>
-        </ownedComment>
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wI0XIMdLEe2Y0omlmhuy6Q" value="4"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wJBLcMdLEe2Y0omlmhuy6Q" value="4"/>
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_k5PU0MGvEe2LLcC67kacBQ" name="searchForLabel" visibility="public" concurrency="guarded">
         <ownedComment xmi:type="uml:Comment" xmi:id="_8IibEMGxEe2LLcC67kacBQ" annotatedElement="_k5PU0MGvEe2LLcC67kacBQ">
@@ -364,17 +352,17 @@ returns the turn direction in North South West East
       <message xmi:type="uml:Message" xmi:id="_OJeJIM5kEe2HpJQJ2Dsjjw" name="DesiredHeading = West" receiveEvent="_OJiakM5kEe2HpJQJ2Dsjjw" sendEvent="_OJglYM5kEe2HpJQJ2Dsjjw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_C-10oM4gEe23vpYjzGMtMg" name="CalculateDirectionsAndLinesToCross_in_Navigation">
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_GPlzsM4gEe23vpYjzGMtMg" name="Lifeline1" coveredBy="_S6LP8M4gEe23vpYjzGMtMg _MAxIIM4gEe23vpYjzGMtMg _MAv6AM4gEe23vpYjzGMtMg _S6oi8s4gEe23vpYjzGMtMg _MAxIIc4gEe23vpYjzGMtMg"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_GPlzsM4gEe23vpYjzGMtMg" name="Lifeline1" coveredBy="_MAxIIM4gEe23vpYjzGMtMg _MAv6AM4gEe23vpYjzGMtMg _S6LP8M4gEe23vpYjzGMtMg _S6oi8s4gEe23vpYjzGMtMg _MAxIIc4gEe23vpYjzGMtMg"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_GkTfcM4gEe23vpYjzGMtMg" name="Lifeline2" represents="_aUZs8cKHEe2FVqS9u6uSgQ" coveredBy="_S6L3AM4gEe23vpYjzGMtMg _8xr1YM5MEe2HpJQJ2Dsjjw _8ySSUc5MEe2HpJQJ2Dsjjw _BX0TAM5NEe2HpJQJ2Dsjjw _CDrTcM5NEe2HpJQJ2Dsjjw _BYoLUc5NEe2HpJQJ2Dsjjw _Fm47gc5NEe2HpJQJ2Dsjjw _CEVawc5NEe2HpJQJ2Dsjjw _Fnn7UM5NEe2HpJQJ2Dsjjw _ZopTEM4gEe23vpYjzGMtMg _ZoqhMM4gEe23vpYjzGMtMg _0AVYgM4gEe23vpYjzGMtMg _0AV_kM4gEe23vpYjzGMtMg _pTqlAM4hEe23vpYjzGMtMg _pTqlAc4hEe23vpYjzGMtMg _VjGvIc4iEe23vpYjzGMtMg _VjHWMM4iEe23vpYjzGMtMg _nafQgM5bEe2HpJQJ2Dsjjw _naf3kM5bEe2HpJQJ2Dsjjw _kG1o4c4jEe23vpYjzGMtMg _kG2P8M4jEe23vpYjzGMtMg _Fg5FMM4hEe23vpYjzGMtMg _--MF0M4jEe2kHcBlRFA79w _--MF0c4jEe2kHcBlRFA79w _RicEIM4kEe2kHcBlRFA79w _RidSQM4kEe2kHcBlRFA79w _YjN4EM5MEe2HpJQJ2Dsjjw _YjN4Ec5MEe2HpJQJ2Dsjjw _FEI18M5cEe2HpJQJ2Dsjjw _FEJdAM5cEe2HpJQJ2Dsjjw _btnXgc5MEe2HpJQJ2Dsjjw _btn-kM5MEe2HpJQJ2Dsjjw _DCGukM4hEe23vpYjzGMtMg _809qgM5aEe2HpJQJ2Dsjjw _80-RkM5aEe2HpJQJ2Dsjjw _jfYHoM4gEe23vpYjzGMtMg _aPoPMM5PEe2HpJQJ2Dsjjw _aPo2QM5PEe2HpJQJ2Dsjjw _Dpd80M5eEe2HpJQJ2Dsjjw _Dpej4M5eEe2HpJQJ2Dsjjw _wiIA4M5PEe2HpJQJ2Dsjjw _wiIn8M5PEe2HpJQJ2Dsjjw _c5rgAM5iEe2HpJQJ2Dsjjw _c5rgAc5iEe2HpJQJ2Dsjjw _eATw4M5iEe2HpJQJ2Dsjjw _eAUX8M5iEe2HpJQJ2Dsjjw _vGRt8M5PEe2HpJQJ2Dsjjw _V1D1cM5cEe2HpJQJ2Dsjjw _V1EcgM5cEe2HpJQJ2Dsjjw _TKbJQM5eEe2HpJQJ2Dsjjw _TKbwUM5eEe2HpJQJ2Dsjjw _ymHR4M5PEe2HpJQJ2Dsjjw _ymH48M5PEe2HpJQJ2Dsjjw _fVR_wM5iEe2HpJQJ2Dsjjw _fVSm0M5iEe2HpJQJ2Dsjjw _XCA7UM5dEe2HpJQJ2Dsjjw _XCBiYM5dEe2HpJQJ2Dsjjw _gY71IM5iEe2HpJQJ2Dsjjw _gY8cMM5iEe2HpJQJ2Dsjjw _vYLWQM5PEe2HpJQJ2Dsjjw _XhgeQM5eEe2HpJQJ2Dsjjw _XhhFUM5eEe2HpJQJ2Dsjjw _mNPcEM4gEe23vpYjzGMtMg _EiTxsM5QEe2HpJQJ2Dsjjw _EiUYwM5QEe2HpJQJ2Dsjjw _ma0xAM5gEe2HpJQJ2Dsjjw _ma0xAc5gEe2HpJQJ2Dsjjw _KTP1kM5QEe2HpJQJ2Dsjjw _KTQcoM5QEe2HpJQJ2Dsjjw _hxs-4M5iEe2HpJQJ2Dsjjw _hxtl8M5iEe2HpJQJ2Dsjjw _xor38M5dEe2HpJQJ2Dsjjw _xosfAM5dEe2HpJQJ2Dsjjw _i06vYM5iEe2HpJQJ2Dsjjw _i07WcM5iEe2HpJQJ2Dsjjw _HiovIM5QEe2HpJQJ2Dsjjw _09X0cM5gEe2HpJQJ2Dsjjw _09YbgM5gEe2HpJQJ2Dsjjw _437YwM5QEe2HpJQJ2Dsjjw _437_0M5QEe2HpJQJ2Dsjjw _kyyxUM5iEe2HpJQJ2Dsjjw _kyzYYM5iEe2HpJQJ2Dsjjw _l7v9cM5iEe2HpJQJ2Dsjjw _l7wkgM5iEe2HpJQJ2Dsjjw _IFHxIM5QEe2HpJQJ2Dsjjw _puJYYM5fEe2HpJQJ2Dsjjw _puJ_cM5fEe2HpJQJ2Dsjjw _miRQ4M4gEe23vpYjzGMtMg _BFDX8M5hEe2HpJQJ2Dsjjw _BFDX8c5hEe2HpJQJ2Dsjjw _AYtpoM5REe2HpJQJ2Dsjjw _AYuQsM5REe2HpJQJ2Dsjjw _nSqGAM5iEe2HpJQJ2Dsjjw _nSqtEM5iEe2HpJQJ2Dsjjw _oh7VgM5iEe2HpJQJ2Dsjjw _oh7Vgc5iEe2HpJQJ2Dsjjw _DulmAM5hEe2HpJQJ2Dsjjw _DumNEM5hEe2HpJQJ2Dsjjw _FvfhEM5REe2HpJQJ2Dsjjw _FvgIIM5REe2HpJQJ2Dsjjw _p9Fr8M5iEe2HpJQJ2Dsjjw _p9GTAM5iEe2HpJQJ2Dsjjw _rLh1AM5iEe2HpJQJ2Dsjjw _rLicEM5iEe2HpJQJ2Dsjjw _rlJ9UM5fEe2HpJQJ2Dsjjw _rlKkYM5fEe2HpJQJ2Dsjjw _S6oi8c4gEe23vpYjzGMtMg _9i4lcM4jEe2kHcBlRFA79w _9jwIIM4jEe2kHcBlRFA79w _S6k4kM4gEe23vpYjzGMtMg"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_pFocIM45Ee2kHcBlRFA79w" name="Lifeline19" represents="_7kUPwMEZEe26IsGNZUAC7A" coveredBy="_8xr1Yc5MEe2HpJQJ2Dsjjw _8ySSUM5MEe2HpJQJ2Dsjjw _BX0TAc5NEe2HpJQJ2Dsjjw _BYoLUM5NEe2HpJQJ2Dsjjw _CDr6gM5NEe2HpJQJ2Dsjjw _CEVawM5NEe2HpJQJ2Dsjjw _Fm5ikM5NEe2HpJQJ2Dsjjw _FnnUQc5NEe2HpJQJ2Dsjjw _8yOn8M5MEe2HpJQJ2Dsjjw _BYiEsM5NEe2HpJQJ2Dsjjw _CERJUM5NEe2HpJQJ2Dsjjw _Fnjp4M5NEe2HpJQJ2Dsjjw"/>
+      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_MAxIIM4gEe23vpYjzGMtMg" name="ActionExecutionSpecification3Start" covered="_GPlzsM4gEe23vpYjzGMtMg" execution="_MAv6AM4gEe23vpYjzGMtMg"/>
+      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_MAv6AM4gEe23vpYjzGMtMg" name="ActionExecutionSpecification3" covered="_GPlzsM4gEe23vpYjzGMtMg" finish="_MAxIIc4gEe23vpYjzGMtMg" start="_MAxIIM4gEe23vpYjzGMtMg"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_S6LP8M4gEe23vpYjzGMtMg" name="Message6SendEvent" covered="_GPlzsM4gEe23vpYjzGMtMg" message="_S6JawM4gEe23vpYjzGMtMg"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_S6L3AM4gEe23vpYjzGMtMg" name="Message6ReceiveEvent" covered="_GkTfcM4gEe23vpYjzGMtMg" message="_S6JawM4gEe23vpYjzGMtMg"/>
       <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_S6k4kM4gEe23vpYjzGMtMg" name="BehaviorExecutionSpecification9" covered="_GkTfcM4gEe23vpYjzGMtMg" finish="_S6oi8c4gEe23vpYjzGMtMg" start="_S6L3AM4gEe23vpYjzGMtMg"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8xr1YM5MEe2HpJQJ2Dsjjw" name="Message22SendEvent" covered="_GkTfcM4gEe23vpYjzGMtMg" message="_8xrOUM5MEe2HpJQJ2Dsjjw"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8xr1Yc5MEe2HpJQJ2Dsjjw" name="Message22ReceiveEvent" covered="_pFocIM45Ee2kHcBlRFA79w" message="_8xrOUM5MEe2HpJQJ2Dsjjw"/>
       <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_8yOn8M5MEe2HpJQJ2Dsjjw" name="BehaviorExecutionSpecification25" covered="_pFocIM45Ee2kHcBlRFA79w" finish="_8ySSUM5MEe2HpJQJ2Dsjjw" start="_8xr1Yc5MEe2HpJQJ2Dsjjw"/>
-      <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_MAxIIM4gEe23vpYjzGMtMg" name="ActionExecutionSpecification3Start" covered="_GPlzsM4gEe23vpYjzGMtMg" execution="_MAv6AM4gEe23vpYjzGMtMg"/>
-      <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_MAv6AM4gEe23vpYjzGMtMg" name="ActionExecutionSpecification3" covered="_GPlzsM4gEe23vpYjzGMtMg" finish="_MAxIIc4gEe23vpYjzGMtMg" start="_MAxIIM4gEe23vpYjzGMtMg"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8ySSUM5MEe2HpJQJ2Dsjjw" name="Message27SendEvent" covered="_pFocIM45Ee2kHcBlRFA79w" message="_8yRrQM5MEe2HpJQJ2Dsjjw"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8ySSUc5MEe2HpJQJ2Dsjjw" name="Message27ReceiveEvent" covered="_GkTfcM4gEe23vpYjzGMtMg" message="_8yRrQM5MEe2HpJQJ2Dsjjw"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BX0TAM5NEe2HpJQJ2Dsjjw" name="Message29SendEvent" covered="_GkTfcM4gEe23vpYjzGMtMg" message="_BXzr8M5NEe2HpJQJ2Dsjjw"/>
